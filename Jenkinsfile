@@ -14,7 +14,7 @@ node ("ubuntu") {
     }
     
     stage("push to Docker Hub") {
-        withDockerRegistry(registry:[credentialsId: 'dockerhub']) {
+        withDockerRegistry(registry:[credentialsId: 'dockerhub.bettyops']) {
             customImage.push()
         }
     }
