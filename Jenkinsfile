@@ -20,10 +20,10 @@ node ("ubuntu") {
     }
     
     stage("deploy") {
-        kubernetesDeploy(configs: 'k8s/k8sdeploy.yml', enableConfigSubstitution: true)
+        kubernetesDeploy(configs: 'k8s/deploy.yml', enableConfigSubstitution: true)
     }
     
     stage("expose service") { // Expose the app to the world
-        kubernetesDeploy(configs: 'k8s/k8sservice.yml', enableConfigSubstitution: true)
+        kubernetesDeploy(configs: 'k8s/service.yml', enableConfigSubstitution: true)
     }
 }
